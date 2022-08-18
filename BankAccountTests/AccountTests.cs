@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using System.Data;
 
 namespace BankAccount.Tests
 {
@@ -81,6 +83,27 @@ namespace BankAccount.Tests
 
             // Assert
             Assert.AreEqual(expectedBalance, actualBalance);
+        }
+
+        [TestMethod]
+        public void Withdraw_positiveAmount_ReturnsUpdatedBalance()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        [DataRow(0)]
+        [DataRow(-.01)]
+        [DataRow(-1000)]
+        public void Withdraw_ZeroOrLess_ThrowsArgumentOutOfRangeException()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        public void Withdraw_MoreThanAvailableBalance_ThrowsArgumentException()
+        {
+            Assert.Fail();
         }
     }
     
